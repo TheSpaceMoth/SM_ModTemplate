@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationSequence">
+  <operations>
+    <li Class="PatchOperationAttributeSet">
+      <xpath>/Defs/ThingDef[defName="VFEA_AncientWaterFilter"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>BasedHygieneMom</value>
+    </li>
+    <li Class="PatchOperationAttributeAdd">
+    <xpath>/Defs/ThingDef[defName="VFEA_AncientWaterFilter"]</xpath>
+    <attribute>DBHLite</attribute>
+    <value>true</value>
+    </li>
+    <li Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="VFEA_AncientWaterFilter"]</xpath>
+    <value>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="DubsBadHygiene.CompProperties_Pipe">
+				<mode>Sewage</mode>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>750</basePowerConsumption>
+			</li>
+			<li Class="DubsBadHygiene.CompProperties_SepticTank">
+				<compClass>DubsBadHygiene.CompSepticTank</compClass>
+				<TreatedPerDay>250</TreatedPerDay>
+				<capacity>5000</capacity>
+				<priority>2</priority>
+			</li>
+			<li Class="DubsBadHygiene.CompProperties_WaterFiltration">
+			</li>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+    </value>
+    </li>
+    <li Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="VFEA_AncientWaterFilter"]/statBases</xpath>
+    <value>
+		<Mass>75</Mass>
+    </value>
+    </li>
+    <!-- etc -->
+  </operations>
+</Operation>
+
+</Patch>
